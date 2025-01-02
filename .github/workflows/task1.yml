@@ -1,4 +1,4 @@
-name: Echo Hostname
+name: Echo Hostname on self hosted runner
 
 on:
   push:
@@ -7,11 +7,8 @@ on:
 
 jobs:
   echo-hostname:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
-      - name: Check out code
-        uses: actions/checkout@v3
-
       - name: Echo Hostname
         run: hostname

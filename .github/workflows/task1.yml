@@ -10,5 +10,7 @@ jobs:
     runs-on: self-hosted
 
     steps:
+      - name: cloning repo
+        run: git clone https://github.com/yasirdev111/mygitactions.git
       - name: Echo Hostname
         run: hostname

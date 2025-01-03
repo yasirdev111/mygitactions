@@ -14,3 +14,9 @@ jobs:
         run: git clone https://github.com/yasirdev111/mygitactions.git
       - name: Echo Hostname
         run: hostname
+      - name: current dir
+        run: pwd
+      - name: Os details
+        run: |
+          cat /etc/os-release
+          ip a s

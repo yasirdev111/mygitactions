@@ -20,7 +20,6 @@ jobs:
         run: pwd
       - name: Os details
         run: |
-          cat /etc/os-release
           ip a s
           pwd
           ls -l

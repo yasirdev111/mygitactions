@@ -20,7 +20,6 @@ jobs:
         run: pwd
       - name: Os details
         run: |
-          ip a s
           pwd
           ls -l
           echo "running hostname.sh file"

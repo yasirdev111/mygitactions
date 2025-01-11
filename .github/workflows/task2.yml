@@ -13,11 +13,6 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Install Ansible
-        run: |
-          sudo apt update
-          sudo apt install -y ansible
-
       - name: Run Ansible Playbook
         run: |
           ansible-playbook  ~/ansibletask/playbooks/packages.yml

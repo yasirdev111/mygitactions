@@ -25,4 +25,3 @@ jobs:
           echo "running hostname.sh file"
           chmod +x hostname.sh
           ./hostname.sh
-          cd ansibletask/playbooks/

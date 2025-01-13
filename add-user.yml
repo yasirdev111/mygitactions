@@ -1,0 +1,27 @@
+- hosts: all
+  roles:
+    - ansible-role-adduser
+  vars:
+    adduser__users:
+      - name: "steeve"
+        #groups: ["ali"]
+        ssh_key: ["ssh-rsa blahblahblah"]
+        shell: "/bin/bash"
+        #uid: 3003
+        home: "/home/kashif"
+        system: true
+
+      - role: ansible-cronjob
+      #- ansible-cronjob
+        vars:
+          cronjobs:
+          - name: 'Example cronjob'
+            user: 'root'
+            state: 'present'
+            minute: '20'
+            hour: '*'
+            day: '*'
+            weekday: '*'
+            month: '*'
+            job: 'curl www.google.com'
+            special_time: 'daily'

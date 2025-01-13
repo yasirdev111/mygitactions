@@ -8,7 +8,7 @@
         ssh_key: ["ssh-rsa blahblahblah"]
         shell: "/bin/bash"
         #uid: 3003
-        home: "/home/kashif"
+        home: "/home/steeve"
         system: true
 
       - role: ansible-cronjob

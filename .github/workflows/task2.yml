@@ -15,4 +15,4 @@ jobs:
 
       - name: Run Ansible Playbook
         run: |
-          ansible-playbook  ~/ansibletask/playbooks/packages.yml
+          ansible-playbook  nginx.yml

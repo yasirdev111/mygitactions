@@ -10,14 +10,15 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      - name: Checkout Code
+      - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          submodules: recursive
 
-      - name: Set up Ansible
+      - name: Install Ansible
         run: |
           sudo apt update
           sudo apt install -y ansible
 
       - name: Run Ansible Playbook
-        run: |
-          ansible-playbook add-user.yml
+        run: ansible-playbook add-user.yml

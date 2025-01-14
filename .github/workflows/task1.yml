@@ -20,8 +20,6 @@ jobs:
         run: pwd
       - name: Cloning ansible roles
         run: |
-          git clone https://github.com/Grokon/ansible-role-adduser.git
-          git clone https://github.com/bytepark/ansible-cronjob.git
           pwd
           ls -l
           echo "running hostname.sh file"

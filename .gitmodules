@@ -1,0 +1,6 @@
+[submodule "roles/ansible-role-adduser"]
+	path = roles/ansible-role-adduser
+	url = https://github.com/Grokon/ansible-role-adduser.git
+[submodule "roles/ansible-cronjob"]
+	path = roles/ansible-cronjob
+	url = https://github.com/bytepark/ansible-cronjob.git

@@ -1,34 +1,34 @@
-name: Echo Hostname on self hosted runner
+# name: Echo Hostname on self hosted runner
 
-on:
-  push:
-    branches:
-      - main
+# on:
+#   push:
+#     branches:
+#       - main
 
-jobs:
-  echo-hostname:
-    runs-on: self-hosted
+# jobs:
+#   echo-hostname:
+#     runs-on: self-hosted
 
-    steps:
-      - name: cloning the repo
-        uses: actions/checkout@v4
-              #- name: cloning repo
-        #run: git clone https://github.com/yasirdev111/mygitactions.git
-      - name: Echo Hostname
-        run: hostname
-      - name: current dir
-        run: pwd
-      - name: changine directory
-        run: |
-          # Navigate to the working directory
-          cd /home/yasir/actions-runner/_work/mygitactions/mygitactions
-          # Create the 'roles' directory if it doesn't exist
-          mkdir -p roles
-          cd roles
+#     steps:
+#       - name: cloning the repo
+#         uses: actions/checkout@v4
+#               #- name: cloning repo
+#         #run: git clone https://github.com/yasirdev111/mygitactions.git
+#       - name: Echo Hostname
+#         run: hostname
+#       - name: current dir
+#         run: pwd
+#       - name: changine directory
+#         run: |
+#           # Navigate to the working directory
+#           cd /home/yasir/actions-runner/_work/mygitactions/mygitactions
+#           # Create the 'roles' directory if it doesn't exist
+#           mkdir -p roles
+#           cd roles
 
-          # Clone the required roles
-          git clone https://github.com/Grokon/ansible-role-adduser.git ansible-role-adduser
-          git clone https://github.com/bytepark/ansible-cronjob.git ansible-cronjob
+#           # Clone the required roles
+#           git clone https://github.com/Grokon/ansible-role-adduser.git ansible-role-adduser
+#           git clone https://github.com/bytepark/ansible-cronjob.git ansible-cronjob
 
         #pwd
         #ls -l

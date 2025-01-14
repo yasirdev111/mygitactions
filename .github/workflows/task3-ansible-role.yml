@@ -6,21 +6,18 @@ on:
       - main
 
 jobs:
-  run-playbook:
+  ansible:
     runs-on: self-hosted
+
     steps:
-      - name: Checkout Repository
+      - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Clone Required Roles
+      - name: Set up Ansible
         run: |
-          mkdir -p roles
-          cd roles
-          git clone https://github.com/Grokon/ansible-role-adduser.git ansible-role-adduser
-          git clone https://github.com/bytepark/ansible-cronjob.git ansible-cronjob
+          sudo apt update
+          sudo apt install -y ansible
 
       - name: Run Ansible Playbook
         run: |
-          ansible-playbook add-user.yml -i inventory
-        working-directory: ${{ github.workspace }}
-
+          ansible-playbook playbook.yml

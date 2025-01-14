@@ -1,22 +1,26 @@
-- hosts: all
-  roles:
-    - ansible-role-adduser
-    - ansible-cronjob
-  vars:
-    adduser__users:
-      - name: "steeve"
-        ssh_key: ["ssh-rsa blahblahblah"]
-        shell: "/bin/bash"
-        home: "/home/steeve"
-        system: true
+name: Run Ansible Playbook
 
-    cronjobs:
-      - name: "Example cronjob"
-        user: "root"
-        state: "present"
-        minute: "20"
-        hour: "*"
-        day: "*"
-        weekday: "*"
-        month: "*"
-        job: "curl www.google.com"
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-playbook:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Clone Required Roles
+        run: |
+          mkdir -p roles
+          cd roles
+          git clone https://github.com/Grokon/ansible-role-adduser.git ansible-role-adduser
+          git clone https://github.com/bytepark/ansible-cronjob.git ansible-cronjob
+
+      - name: Run Ansible Playbook
+        run: |
+          ansible-playbook add-user.yml -i inventory
+        working-directory: ${{ github.workspace }}
+

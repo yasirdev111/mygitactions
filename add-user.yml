@@ -11,12 +11,12 @@
         system: true
 
     cronjobs:
-      - name: 'Example cronjob'
-        user: 'root'
-        state: 'present'
-        minute: '20'
-        hour: '*'
-        day: '*'
-        weekday: '*'
-        month: '*'
-        job: 'curl www.google.com'
+      - name: "Example cronjob"
+        user: "root"
+        state: "present"
+        minute: "20"
+        hour: "*"
+        day: "*"
+        weekday: "*"
+        month: "*"
+        job: "curl www.google.com"

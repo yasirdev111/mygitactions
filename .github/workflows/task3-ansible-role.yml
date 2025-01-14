@@ -1,4 +1,4 @@
-name: Run Ansible Playbook
+name: Setup Roles and Run Ansible Playbook
 
 on:
   push:
@@ -13,13 +13,19 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          submodules: recursive
-          token: ${{ secrets.GITHUB_TOKEN }}
+          submodules: recursive  # Ensures submodules are checked out
 
       - name: Install Ansible
         run: |
           sudo apt update
           sudo apt install -y ansible
+
+      - name: Clone roles
+        run: |
+          mkdir -p roles
+          cd roles
+          git clone https://github.com/Grokon/ansible-role-adduser.git ansible-role-adduser
+          git clone https://github.com/bytepark/ansible-cronjob.git ansible-cronjob
 
       - name: Run Ansible Playbook
         run: ansible-playbook add-user.yml

@@ -1,32 +1,32 @@
-name: Setup Roles and Run Ansible Playbook
+# name: Setup Roles and Run Ansible Playbook
 
-on:
-  push:
-    branches:
-      - main
+# on:
+#   push:
+#     branches:
+#       - main
 
-jobs:
-  ansible:
-    runs-on: self-hosted
+# jobs:
+#   ansible:
+#     runs-on: self-hosted
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-        with:
-          submodules: recursive  # Ensures submodules are checked out
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v3
+#         with:
+#           submodules: recursive  # Ensures submodules are checked out
 
-      - name: Install Ansible
-        run: |
-          sudo apt update
-          sudo apt install -y ansible
+#       - name: Install Ansible
+#         run: |
+#           sudo apt update
+#           sudo apt install -y ansible
 
-      - name: Clone roles
-        run: |
-          # mkdir -p roles
-          # cd roles
-          # git clone https://github.com/Grokon/ansible-role-adduser.git ansible-role-adduser
-          # git clone https://github.com/bytepark/ansible-cronjob.git ansible-cronjob
+#       - name: Clone roles
+#         run: |
+#           # mkdir -p roles
+#           # cd roles
+#           # git clone https://github.com/Grokon/ansible-role-adduser.git ansible-role-adduser
+#           # git clone https://github.com/bytepark/ansible-cronjob.git ansible-cronjob
 
-      - name: Run Ansible Playbook
-        run: |
-          pwd
+#       - name: Run Ansible Playbook
+#         run: |
+#           pwd

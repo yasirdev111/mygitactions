@@ -22,10 +22,6 @@ jobs:
         run: |
           Navigate to the working directory
           cd /home/yasir/actions-runner/_work/mygitactions/mygitactions
-          
-          # Clone the required roles
-          git clone https://github.com/Grokon/ansible-role-adduser.git ansible-role-adduser
-          git clone https://github.com/bytepark/ansible-cronjob.git ansible-cronjob
 
           pwd
           ls -l

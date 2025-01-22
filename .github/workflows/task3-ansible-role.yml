@@ -22,10 +22,11 @@ jobs:
 
       - name: Clone roles
         run: |
-          mkdir -p roles
-          cd roles
-          git clone https://github.com/Grokon/ansible-role-adduser.git ansible-role-adduser
-          git clone https://github.com/bytepark/ansible-cronjob.git ansible-cronjob
+          # mkdir -p roles
+          # cd roles
+          # git clone https://github.com/Grokon/ansible-role-adduser.git ansible-role-adduser
+          # git clone https://github.com/bytepark/ansible-cronjob.git ansible-cronjob
 
       - name: Run Ansible Playbook
-        run: ansible-playbook add-user.yml
+        run: |
+          pwd

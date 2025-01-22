@@ -26,3 +26,7 @@ jobs:
           echo "running hostname.sh file"
           chmod +x hostname.sh
           ./hostname.sh
+      - name: Login to macAir
+        run: |
+          ssh yasir@10.0.0.101
+          touch filethroughgitaction

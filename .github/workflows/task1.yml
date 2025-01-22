@@ -30,3 +30,4 @@ jobs:
         run: |
           ssh yasir@10.0.0.101
           touch filethroughgitaction
+          hostname

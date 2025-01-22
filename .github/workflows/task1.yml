@@ -20,9 +20,7 @@ jobs:
         run: pwd
       - name: changine directory
         run: |
-          Navigate to the working directory
           cd /home/yasir/actions-runner/_work/mygitactions/mygitactions
-
           pwd
           ls -l
           echo "running hostname.sh file"

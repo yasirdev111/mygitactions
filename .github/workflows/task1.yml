@@ -28,6 +28,4 @@ jobs:
           ./hostname.sh
       - name: Login to macAir
         run: |
-          ssh yasir@10.0.0.101
-          touch filethroughgitaction
-          hostname
+          ssh yasir@10.0.0.101 "touch filethroughgitaction && hostname"

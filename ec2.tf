@@ -7,7 +7,7 @@ module "ec2_instance" {
   version = "~> 5.0"
 
   name = "GitHubActions-EC2"
-  instance_count = 1
+  count = 1
   ami = "ami-07d2649d67dbe8900"  # Replace with your desired AMI
   instance_type = "t2.micro"
 

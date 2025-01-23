@@ -17,7 +17,10 @@ jobs:
       - name: Echo Hostname
         run: hostname
       - name: current dir
-        run: pwd
+        run: |
+          pwd
+          ls
+        
       - name: changine directory
         run: |
           cd /home/yasir/actions-runner/_work/mygitactions/mygitactions

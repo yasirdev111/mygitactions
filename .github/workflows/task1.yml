@@ -22,7 +22,7 @@ jobs:
         run: |
           cd /home/yasir/actions-runner/_work/mygitactions/mygitactions
           pwd
-          ls -l
-          echo "running hostname.sh file"
-          chmod +x hostname.sh
-          ./hostname.sh
+          ansible-playbook nginx.yml
+#          echo "running hostname.sh file"
+#          chmod +x hostname.sh
+#          ./hostname.sh
